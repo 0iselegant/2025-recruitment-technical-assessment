@@ -45,7 +45,7 @@ def parse():
 def parse_handwriting(recipeName: str) -> Union[str | None]:
 	recipeName = re.sub(r'(-|_)', ' ', recipeName) # replace underscores and hyphens with empty space
 	recipeName = re.sub(r'[^(a-zA-Z| )]', '', recipeName) # remove all non-letter, non-whitespace characters
-	recipeName = re.sub(r' +', ' ', recipeName) # remove extra whitespace
+	recipeName = re.sub(r' +', ' ', recipeName).strip() # remove extra whitespace
 	recipeName = ' '.join([word.capitalize() for word in recipeName.split(' ')]) # capitalise
 	if len(recipeName) == 0:
 		return None
@@ -84,7 +84,7 @@ def create_entry():
 	return "", 200
 		
 
-	# TODO: implement me
+# TODO: implement me
 # [TASK 3] ====================================================================
 # Endpoint that returns a summary of a recipe that corresponds to a query name
 @app.route('/summary', methods=['GET'])
@@ -140,13 +140,13 @@ def recipeSummary(recipeName):
 			for ingredient in subRecipeSummary["ingredients"]:
 				summaryIngredient = next(filter(lambda ing: ing["name"] == ingredient["name"], result["ingredients"]), None)
 				if summaryIngredient:
-					summaryIngredient["quantity"] += ingredient["quantity"]
+					summaryIngredient["quantity"] += ingredient["quantity"] * item["quantity"]
 				else:
 					result["ingredients"].append({
 						"name": ingredient["name"],
-						"quantity": ingredient["quantity"]
+						"quantity": ingredient["quantity"] * item["quantity"]
                     })
-			result["cookTime"] += subRecipeSummary["cookTime"]
+			result["cookTime"] += subRecipeSummary["cookTime"] * item["quantity"]
 	return result
 
 

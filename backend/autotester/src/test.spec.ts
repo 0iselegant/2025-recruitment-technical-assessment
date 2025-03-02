@@ -157,5 +157,126 @@ describe("Task 3", () => {
       const resp3 = await getTask3("Skibidi");
       expect(resp3.status).toBe(200);
     });
+
+    // NOTE: PASSING TEST CASE, BUT COMMENTED OUT BECAUSE THERE IS NOT WAY TO CLEAR THE DATABASE, SO IT WILL FAIL WHEN COMBINED WITH PREVIOUS TESTS
+    // it("My test", async () => {
+    //   const spaghetti = {
+    //     "type": "recipe",
+    //     "name": "Skibidi Spaghetti",
+    //     "requiredItems": [
+    //       {
+    //         "name": "Meatball",
+    //         "quantity": 3
+    //       },
+    //       {
+    //         "name": "Pasta",
+    //         "quantity": 1
+    //       },
+    //       {
+    //         "name": "Tomato",
+    //         "quantity": 2
+    //       }
+    //     ]
+    //   };
+
+    //   const meatball = {
+    //     "type": "recipe",
+    //     "name": "Meatball",
+    //     "requiredItems": [
+    //       {
+    //         "name": "Beef",
+    //         "quantity": 2
+    //       },
+    //       {
+    //         "name": "Egg",
+    //         "quantity": 1
+    //       }
+    //     ]
+    //   };
+
+    //   const pasta = {
+    //     "type": "recipe",
+    //     "name": "Pasta",
+    //     "requiredItems": [
+    //       {
+    //         "name": "Flour",
+    //         "quantity": 3
+    //       },
+    //       {
+    //         "name": "Egg",
+    //         "quantity": 1
+    //       }
+    //     ]
+    //   };
+
+    //   const beef = {
+    //       "type": "ingredient",
+    //       "name": "Beef",
+    //       "cookTime": 5
+    //   };
+
+    //   const egg = {
+    //       "type": "ingredient",
+    //       "name": "Egg",
+    //       "cookTime": 3,
+    //   };
+      
+    //   const flour = {
+    //       "type": "ingredient",
+    //       "name": "Flour",
+    //       "cookTime": 0
+    //   };
+
+    //   const tomato = {
+    //       "type": "ingredient",
+    //       "name": "Tomato",
+    //       "cookTime": 2,
+    //   };
+
+    //   const resp1 = await postEntry(tomato);
+    //   expect(resp1.status).toBe(200);
+
+    //   const resp2 = await postEntry(flour);
+    //   expect(resp2.status).toBe(200);
+
+    //   const resp3 = await postEntry(egg);
+    //   expect(resp3.status).toBe(200);
+
+    //   const resp4 = await postEntry(beef);
+    //   expect(resp4.status).toBe(200);
+
+    //   const resp5 = await postEntry(pasta);
+    //   expect(resp5.status).toBe(200);
+
+    //   const resp6 = await postEntry(meatball);
+    //   expect(resp6.status).toBe(200);
+
+    //   const resp7 = await postEntry(spaghetti);
+    //   expect(resp7.status).toBe(200);
+
+    //   const resp8 = await getTask3("Skibidi Spaghetti");
+    //   expect(JSON.parse(resp8.text)).toStrictEqual({
+    //     "name": "Skibidi Spaghetti",
+    //     "cookTime": 46,
+    //     "ingredients": [
+    //       {
+    //         "name": "Beef",
+    //         "quantity": 6
+    //       },
+    //       {
+    //         "name": "Egg",
+    //         "quantity": 4
+    //       },
+    //       {
+    //         "name": "Flour",
+    //         "quantity": 3
+    //       },
+    //       {
+    //         "name": "Tomato",
+    //         "quantity": 2
+    //       }
+    //     ]
+    //   });
+    // });
   });
 });
