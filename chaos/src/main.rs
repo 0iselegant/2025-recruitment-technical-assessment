@@ -1,5 +1,4 @@
 use axum::{routing::post, Router};
-
 mod data;
 
 #[tokio::main]
